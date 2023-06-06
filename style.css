@@ -32,22 +32,23 @@ p, input{
 #labelInputEntrada {
     font-size: 29px;
     font-weight: 500;
+    margin: 0;
 }
 
 html{
     background-color: var(--dark-color);
 }
 
-body{
+main{
     margin: auto 20%;
 }
 
-container{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
+button{
+    background-color: transparent;
+    padding: 4px 6px;
+    border-radius: 5px;   
 }
+
 
 .input, .output{
     background-color: var(--light-color);
@@ -56,30 +57,20 @@ container{
 
 .output{
     border-top: 2px dashed var(--dark-color);
-    border-radius: 16px 16px 0 0;
+    border-radius: 16px 16px 5px 5px;
 }
 
 .input{
-    border-radius: 0 0 16px 16px;
+    border-radius: 5px 5px 16px 16px;
 }
 
-button{
-    background-color: transparent;
-    padding: 4px 6px;
-    border-radius: 5px;
-    
+
+section div:first-child{
+    margin-bottom: 24px;
 }
-.entrada{
-    margin-bottom: 20px;
-}
-.entrada label{
+
+.inputEntrada label{
     display: block;
-}
-
-#displaySaida{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 input{
@@ -97,16 +88,22 @@ input{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 20px;
 }
 
-.intervalo, .horarioMin{
+.sideBySide{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
 
-.intervalo{
-    margin-bottom: 10px;
+.footer{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    background-color: #E1F67A;
 }
 
+.footer img{
+    width: 90px;
+}

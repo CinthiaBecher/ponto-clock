@@ -8,39 +8,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <container>
-        <div class="input">
-            <div class="entrada">
+    <main>
+        <section class="ticket input">
+            <div class="inputEntrada">
                 <label id="labelInputEntrada" for="inputEntrada">Qual o horário da</br> sua entrada?</label>
                 <input type="time" name="inputEntrada" id="inputEntrada">
             </div>
-            <div class="qtddHoras">
+            <div class="sideBySide">
                 <label for="inputQtddHoras" id="qtddHorasLabel">Quantidade de
                     horas da jornada:</label>
                 <input type="time" name="inputQtddHoras">
             </div>
-            <div class="intervalo">
+            <div class="addIntervalo">
                 <button>Add intervalo</button>
             </div>
-        </div>
-        <div class="output">
-            <div id="displaySaida">
+        </section>
+        <section class="ticket output">
+            <div class="sideBySide displaySaida">
                 <h2 id="pSaidaEsperada"> Saída<br>Esperada</h2>
-                <h1>17:49PM</h1>
+                <h1 id="h1DisplaySaidaEsperada"><span id="horarioSaida"></span></h1>
             </div>
-            <div>
-                <div class="intervalo">
-                    <p>Intervalo</p>
-                    <p>1:00</p>
-                </div>
-                <div class="horarioMin">
-                    <p>Horário mínimo para início<br>da jornada próximo dia</p>
+            <div class="sideBySide">
+                <p>Intervalo</p>
+                <p>1:00</p>
+            </div>
+            <div class="sideBySide">
+                <p>Horário mínimo para início<br>da jornada próximo dia</p>
                     <p>06:00AM</p>
-                </div>
             </div>
-
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <img src="/images/ponto'clock.png" alt="Ponto'clock logo">
         </div>
-    </container>
-    
+    </footer>
+
+    <script src="app.js"></script>
+
 </body>
+
 </html>
