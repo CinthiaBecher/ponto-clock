@@ -1,5 +1,4 @@
 entrada = document.getElementById("inputEntrada");
-
 entrada.addEventListener('input', calcularHorarioSaida);
 
 function calcularHorarioSaida() {
@@ -21,11 +20,30 @@ function calcularHorarioSaida() {
 
       // Exibe o horário de saída
       console.log(`Horário de Saída: ${horaSaida}:${minutosSaida}`);
-      horarioSaidaElemento.textContent = `${horaSaida}:${minutosSaida}`;
 
-      displaySaida(horaSaida,minutosSaida);
+      const horarioSaidaElemento = document.getElementById('horarioSaida');
+      horarioSaidaElemento.textContent = `${horaSaida}:${minutosSaida}`;
     }
 }
 
-function displaySaida(horas,minutos){
+horasJornada = document.getElementById("inputHorasJornada");
+horasJornada.addEventListener('input', calcularNovasHorasJornada);
+
+function calcularNovasHorasJornada(){
+  console.log("entrou")
+  
+  const novasHorasJornada = inputHorasJornada.value;
+  console.log(novasHorasJornada);
+
+  // Converte o horário de entrada para o formato de data e hora
+  const dataHoraEntrada = new Date(`2000-01-01T${novasHorasJornada}`);
+  
+  var horas = dataHoraEntrada.getHours().toString().padStart(2, '0');
+  var minutos = dataHoraEntrada.getMinutes().toString().padStart(2, '0');
+
+
+  horas = parseInt(horas)
+  minutos = parseInt(minutos)
+  console.log(horas);
+  console.log(minutos)
 }

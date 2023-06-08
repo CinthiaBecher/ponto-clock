@@ -9,34 +9,36 @@
 </head>
 <body>
     <main>
-        <section class="ticket input">
-            <div class="inputEntrada">
-                <label id="labelInputEntrada" for="inputEntrada">Qual o horário da</br> sua entrada?</label>
-                <input type="time" name="inputEntrada" id="inputEntrada">
-            </div>
-            <div class="sideBySide">
-                <label for="inputQtddHoras" id="qtddHorasLabel">Quantidade de
-                    horas da jornada:</label>
-                <input type="time" name="inputQtddHoras">
-            </div>
-            <div class="addIntervalo">
-                <button>Add intervalo</button>
-            </div>
-        </section>
-        <section class="ticket output">
-            <div class="sideBySide displaySaida">
-                <h2 id="pSaidaEsperada"> Saída<br>Esperada</h2>
-                <h1 id="h1DisplaySaidaEsperada"><span id="horarioSaida"></span></h1>
-            </div>
-            <div class="sideBySide">
-                <p>Intervalo</p>
-                <p>1:00</p>
-            </div>
-            <div class="sideBySide">
-                <p>Horário mínimo para início<br>da jornada próximo dia</p>
-                    <p>06:00AM</p>
-            </div>
-        </section>
+        <div>
+            <section class="ticket input">
+                <div class="inputEntrada">
+                    <label id="labelInputEntrada" for="inputEntrada">Qual o horário da</br> sua entrada?</label>
+                    <input type="time" name="inputEntrada" id="inputEntrada" value="08:00">
+                </div>
+                <div class="sideBySide">
+                    <label for="inputQtddHoras" id="qtddHorasLabel">Quantidade de<br>
+                        horas da jornada:</label>
+                    <input type="time" name="inputQtddHoras" value="09:48" id="inputHorasJornada">
+                </div>
+                <div class="addIntervalo">
+                    <button>Add intervalo</button>
+                </div>
+            </section>
+            <section class="ticket output">
+                <div class="sideBySide displaySaida">
+                    <h2 id="pSaidaEsperada"> Saída<br>Esperada</h2>
+                    <h1 id="horarioSaida">00:00</h1>
+                </div>
+                <div class="sideBySide">
+                    <p>Intervalo</p>
+                    <p>1:00</p>
+                </div>
+                <div class="sideBySide">
+                    <p>Horário mínimo para início<br>da jornada próximo dia</p>
+                        <p>06:00AM</p>
+                </div>
+            </section>
+        </div>
     </main>
     <footer>
         <div class="footer">
