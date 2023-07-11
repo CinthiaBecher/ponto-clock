@@ -15,14 +15,21 @@
                     <label id="labelInputEntrada" for="inputEntrada">Qual o horário da</br> sua entrada?</label>
                     <input type="time" name="inputEntrada" id="inputEntrada" value="08:00">
                 </div>
-                <div class="sideBySide settings">
-                    <label for="inputQtddHoras" id="qtddHorasLabel">Quantidade de<br>
+                <div class="settings">
+                    <div class="sideBySide">
+                    <label for="inputQtddHoras" id="qtddHorasLabel">Quantidade de
                         horas da jornada:</label>
                     <input type="time" name="inputQtddHoras" value="09:48" id="inputHorasJornada">
+                    </div>
+                    <div class="sideBySide">
+                        <label for="inputIntervaloDefault" id="intervaloDefaultLabel">Intervalo</label>
+                        <input type="time" name="inputIntervaloDefault" value="01:00" id="inputIntervaloDefault">
+                    </div>
+                    <div class="addIntervalo">
+                        <button>Add intervalo</button>
+                    </div>
                 </div>
-                <div class="addIntervalo">
-                    <button>Add intervalo</button>
-                </div>
+                
             </section>
             <section class="ticket output">
                 <div class="sideBySide displaySaida">
@@ -44,6 +51,7 @@
         <div class="footer">
             <img src="/images/ponto'clock.png" alt="Ponto'clock logo">
         </div>
+        <p>Designer and Developed by Cinthia Becher</p>
     </footer>
 
     <script src="app.js"></script>

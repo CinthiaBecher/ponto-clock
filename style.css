@@ -47,7 +47,7 @@ html, body{
 
 main{
     margin: auto 8%;
-    padding-top: 20%;
+    padding-top: 10%;
     position: relative;
     display: flex;
     justify-content: center;
@@ -122,6 +122,10 @@ input:focus {
     align-items: flex-end;
 }
 
+.sideBySide label{
+    width: 60%;
+}
+
 footer{
     position: absolute;
     bottom: 0;
@@ -129,6 +133,7 @@ footer{
     width: 100%;
     background-color: #E1F67A;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px 0;
@@ -136,4 +141,9 @@ footer{
 
 footer img{
     width: 90px;
+}
+
+footer p{
+    margin: 0;
+    font-size: 14px;
 }
