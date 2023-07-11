@@ -12,16 +12,17 @@ function calcularHorarioSaida() {
 
       //Pega os valores de jornada atualizados
       jornada = getHorasJornada()
+
+      //Pega os valores de invervalo atualizados
+      intervalo = getInvervalo()
+
       // Adiciona 9 horas e 48 minutos ao horário de entrada
-      dataHoraEntrada.setHours(dataHoraEntrada.getHours() + jornada[0]);
-      dataHoraEntrada.setMinutes(dataHoraEntrada.getMinutes() + jornada[1]);
+      dataHoraEntrada.setHours(dataHoraEntrada.getHours() + jornada[0] + intervalo[0]);
+      dataHoraEntrada.setMinutes(dataHoraEntrada.getMinutes() + jornada[1] + intervalo[1]);
 
       // Obtém a hora e os minutos do horário de saída
       const horaSaida = dataHoraEntrada.getHours().toString().padStart(2, '0');
       const minutosSaida = dataHoraEntrada.getMinutes().toString().padStart(2, '0');
-
-      // Exibe o horário de saída
-      console.log(`Horário de Saída: ${horaSaida}:${minutosSaida}`);
 
       const horarioSaidaElemento = document.getElementById('horarioSaida');
       horarioSaidaElemento.textContent = `${horaSaida}:${minutosSaida}`;
@@ -37,7 +38,7 @@ function getHorasJornada(){
 }
 
 intervalo = document.getElementById("inputIntervaloDefault");
-intervalo.addEventListener('input', getInvervalo);
+intervalo.addEventListener('input', calcularHorarioSaida);
 
 function getInvervalo(){
   return inputToDate(inputIntervaloDefault.value)
