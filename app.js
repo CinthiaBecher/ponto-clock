@@ -10,9 +10,11 @@ function calcularHorarioSaida() {
       // Converte o horário de entrada para o formato de data e hora
       const dataHoraEntrada = new Date(`2000-01-01T${horarioEntrada}`);
 
+      //Pega os valores de jornada atualizados
+      jornada = calcularNovasHorasJornada()
       // Adiciona 9 horas e 48 minutos ao horário de entrada
-      dataHoraEntrada.setHours(dataHoraEntrada.getHours() + 9);
-      dataHoraEntrada.setMinutes(dataHoraEntrada.getMinutes() + 48);
+      dataHoraEntrada.setHours(dataHoraEntrada.getHours() + jornada[0]);
+      dataHoraEntrada.setMinutes(dataHoraEntrada.getMinutes() + jornada[1]);
 
       // Obtém a hora e os minutos do horário de saída
       const horaSaida = dataHoraEntrada.getHours().toString().padStart(2, '0');
@@ -23,11 +25,12 @@ function calcularHorarioSaida() {
 
       const horarioSaidaElemento = document.getElementById('horarioSaida');
       horarioSaidaElemento.textContent = `${horaSaida}:${minutosSaida}`;
+
     }
 }
 
 horasJornada = document.getElementById("inputHorasJornada");
-horasJornada.addEventListener('input', calcularNovasHorasJornada);
+horasJornada.addEventListener('input', calcularHorarioSaida);
 
 function calcularNovasHorasJornada(){
   console.log("entrou")
@@ -41,9 +44,8 @@ function calcularNovasHorasJornada(){
   var horas = dataHoraEntrada.getHours().toString().padStart(2, '0');
   var minutos = dataHoraEntrada.getMinutes().toString().padStart(2, '0');
 
-
   horas = parseInt(horas)
   minutos = parseInt(minutos)
-  console.log(horas);
-  console.log(minutos)
+  jornada = [horas, minutos]
+  return jornada
 }
