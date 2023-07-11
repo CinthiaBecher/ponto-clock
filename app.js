@@ -11,7 +11,7 @@ function calcularHorarioSaida() {
       const dataHoraEntrada = new Date(`2000-01-01T${horarioEntrada}`);
 
       //Pega os valores de jornada atualizados
-      jornada = calcularNovasHorasJornada()
+      jornada = getHorasJornada()
       // Adiciona 9 horas e 48 minutos ao horário de entrada
       dataHoraEntrada.setHours(dataHoraEntrada.getHours() + jornada[0]);
       dataHoraEntrada.setMinutes(dataHoraEntrada.getMinutes() + jornada[1]);
@@ -32,35 +32,23 @@ function calcularHorarioSaida() {
 horasJornada = document.getElementById("inputHorasJornada");
 horasJornada.addEventListener('input', calcularHorarioSaida);
 
-function calcularNovasHorasJornada(){
-  const novasHorasJornada = inputHorasJornada.value;
-
-  // Converte o horário de entrada para o formato de data e hora
-  const dataHoraEntrada = new Date(`2000-01-01T${novasHorasJornada}`);
-  
-  var horas = dataHoraEntrada.getHours().toString().padStart(2, '0');
-  var minutos = dataHoraEntrada.getMinutes().toString().padStart(2, '0');
-
-  horas = parseInt(horas)
-  minutos = parseInt(minutos)
-  jornada = [horas, minutos]
-  return jornada
+function getHorasJornada(){
+  return inputToDate(inputHorasJornada.value)
 }
 
 intervalo = document.getElementById("inputIntervaloDefault");
 intervalo.addEventListener('input', getInvervalo);
 
 function getInvervalo(){
-  const intervalo = inputIntervaloDefault.value;
-  console.log(intervalo)
+  return inputToDate(inputIntervaloDefault.value)
+}
 
+function inputToDate(inputValue){
   // Converte o horário de entrada para o formato de data e hora
-  const dataHoraEntrada = new Date(`2000-01-01T${intervalo}`);
+  const horaMinutoData = new Date(`2000-01-01T${inputValue}`);
   
-  var horas = dataHoraEntrada.getHours().toString().padStart(2, '0');
-  var minutos = dataHoraEntrada.getMinutes().toString().padStart(2, '0');
+  var horas = horaMinutoData.getHours().toString().padStart(2, '0');
+  var minutos = horaMinutoData.getMinutes().toString().padStart(2, '0');
 
-  horas = parseInt(horas)
-  minutos = parseInt(minutos)
-  novoIntervalo = [horas, minutos]
+  return [parseInt(horas), parseInt(minutos)]
 }
