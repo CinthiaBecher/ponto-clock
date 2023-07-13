@@ -114,6 +114,10 @@ input:focus {
     align-items: flex-end;
 }
 
+.intervalo p{
+    margin-bottom: 0px;
+}
+
 .sideBySide{
     display: flex;
     justify-content: space-between;
