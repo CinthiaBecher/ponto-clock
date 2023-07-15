@@ -30,7 +30,7 @@ p, input{
 
 #pSaidaEsperada ,
 #labelInputEntrada {
-    font-size: 29px;
+    font-size: 24px;
     font-weight: 600;
     margin: 0;
 }
@@ -46,9 +46,11 @@ html, body{
 }
 
 main{
-    margin: auto 8%;
-    padding-top: 10%;
-    position: relative;
+    top:45%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,8 +127,14 @@ input:focus {
     margin-bottom: 12px;
 }
 
+
 .sideBySide label{
     width: 60%;
+}
+
+#qtddHorasLabel, 
+.intervalo p{
+    font-weight: 700;
 }
 
 footer{
@@ -150,3 +158,7 @@ footer p{
     margin: 0;
     font-size: 14px;
 }
+
+input[type=time]::-webkit-datetime-edit-ampm-field {
+    display: none;
+  }
